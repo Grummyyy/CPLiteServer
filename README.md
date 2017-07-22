@@ -1,5 +1,7 @@
 A project by: Toxic is a sexy muscular latino LLC
 
+(i love this guy though, and hes not a latino. this nig is as white as Casper the ghost.)
+
 # Download CPLiteServer with a functional mediaserver:
 
 https://drive.google.com/open?id=0B-qkAh8VoXBINlVXdDlmMUdqVUk
