@@ -27,6 +27,9 @@ Content:
 # Introduction
 CPLiteServer is a webserver that only runs on javascript. It comes with a fully working website, register and a contact/feedback page.
 The server itself runs on NodeJS with Express. The reason I created this is to replace Apache completely and you can now work in an open-source, fast and easy environment. I hope you enjoy the usage!
+
+VueJS has been added into the website theme. Enjoy the speed!
+
 ##
 # Required programs
 * [NodeJS](https://nodejs.org/en/) (Get the *latest* version)
