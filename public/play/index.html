@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+<script
+src="https://code.jquery.com/jquery-3.2.1.js"
+integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Play | ICE Theme</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="The best theme for CPPS, ICE.">
+    <meta name="keywords" content="cpps,ice,club penguin,free,theme, cpb">
+    <script src="cookies.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <header>
+        <h1><a href="/">{{ ice }}</a></h1>
+        <nav>
+            <li><a href="/">{{ home }}</a></li>
+            <li><a href="localhost:5000/signup">{{ register }}</a></li>
+            <li><a href="/play/index.html">{{ play }}</a></li>
+            <li><a href="/contact">{{ contact }}</a></li>
+        </nav>
+    </header>
+
+    <section class="ice">
+        <div class="background-image"></div>
+        <div class="videoWrapper">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+
+<!-- The Almighty SWFObject -->
+    <script type="text/javascript">
+        var swfUrl                  = "Load.swf";
+        var swfID                   = "scene";
+        var swfWidth                = "1250";
+        var swfHeight               = "800";
+        var swfVersion              = "6.9.1.3.3.7"; //lmao
+        var allowExpressInstall     = false;
+        var flashVars = {};
+        var params = {
+            menu                    : "false",
+            quality                 : "high",
+            allowscriptaccess       : "always",
+            wmode                    : "opaque",
+            salign                    : "t"
+        };
+        var attributes = {
+            id                      :swfID,
+            name                    :swfID
+        };
+
+
+        swfobject.embedSWF(swfUrl, swfID, swfWidth, swfHeight, swfVersion, allowExpressInstall, flashVars, params, attributes);
+    </script>
+                <!-- div shit fix -->
+                <div id="sceneCont">
+                <div id="scene"></div>
+                </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <ul>
+            <li><a href="/" target="_blank"><i class="fa fa-rss-square"></i></a></li>
+        </ul>
+        <p>Coded with &hearts; by <a href="http://amusingthrone.com" target="_blank">AmusingThrone</a>.</p>
+        <p id="usersVisit">
+        	<script>
+        		var socket = io.connect('http://localhost:3001');
+        		var users = document.getElementById('usersVisit');
+        		socket.on('message', function (data) {
+        			document.getElementById("usersVisit").innerHTML = 'Users that visited your CPPS: ' + data.count;
+        	});
+        	</script>
+        </p>
+    </footer>
+    <!--
+<script>
+    document.onkeydown = function(e) {
+        switch (e.keyCode) {
+            case 37:
+                console.log('Left');
+                break;
+            case 38:
+                console.log('Up');
+                break;
+            case 39:
+                console.log('Right');
+                break;
+            case 40:
+                console.log('Down');
+                break;
+        }
+    };
+    function printMousePos(event) {
+        document.body.textContent =
+            console.log("X: " + event.clientX +
+            " - Y: " + event.clientY);
+    }
+
+    document.addEventListener("click", printMousePos);
+</script>
+-->
+</div>
+<script>
+new Vue({
+el: '#app',
+  data: {
+    ice: 'ICE',
+    home: 'Home',
+    register: 'Register',
+    play: 'Play',
+    contact: 'Contact',
+    theme: 'CPPS Theme: ICE',
+    modern: 'A Modern Hand Crafted Theme for CPPS.',
+    playnow: 'Play Now!'
+  }
+})
+</script>
+</body>
+
+</html>
