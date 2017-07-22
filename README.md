@@ -276,3 +276,5 @@ Skype: live:king.daan1
 I hope you will have a great time using CPLiteServer and that you will learn a new programming language!
 
 (©) - toxic fked your btch
+
+(©) - zaseth fked your man
