@@ -1,0 +1,10 @@
+{
+  "development": {
+
+    "username": "root",
+    "password": "root",
+    "database": "kitsune",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}

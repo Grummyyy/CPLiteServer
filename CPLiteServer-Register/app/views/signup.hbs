@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Register</title>
+
+  <link rel="stylesheet" type="text/css" href="./dist/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/site.css">
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="./dist/components/alertify/alertify.min.js"></script>
+  <link rel="stylesheet" href="./dist/components/alertify/css/alertify.min.css" />
+  <link rel="stylesheet" href="./dist/components/themes/default.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/container.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/header.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/image.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/menu.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/Semantic-UI-Alert.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/form.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/input.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/button.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/list.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/message.css">
+  <link rel="stylesheet" type="text/css" href="./dist/components/icon.css">
+  <link rel="icon" type="image/png" href="./assets/images/logo.png" />
+  <script type="text/javascript" src="./dist/components/Semantic-UI-Alert.js"></script>
+  <script src="./dist/components/form.js"></script>
+  <script src="./dist/components/transition.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/droidarabickufi.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+
+
+  <style type="text/css">
+    body {
+      background-color: #DADADA;
+    }
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+      .ui.menu .item img.logo {
+    margin-right: 1.5em;
+  }
+    .main.container {
+    margin-top: 7em;
+  }
+  .wireframe {
+    margin-top: 2em;
+  }
+  .ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+  }
+  </style>
+
+</head>
+
+  <script>
+  $(document)
+    .ready(function() {
+      $('.ui.form')
+        .form({
+          fields: {
+            email: {
+              identifier  : 'email',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : "Please enter your e-mail"
+                },
+                {
+                  type   : 'email',
+                  prompt : "Please enter a valid e-mail"
+                }
+              ]
+            },
+            username: {
+      identifier : 'username',
+      rules: [
+        {
+          type   : 'empty',
+          prompt : "Please enter a username"
+        },
+        {
+          type   : 'minLength[3]',
+          prompt : "Your username must be at least 3 characters"
+        }
+      ]
+    },
+            password: {
+              identifier  : 'password',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : "Please enter your password"
+                },
+                {
+                  type   : 'length[6]',
+                  prompt : "Your password must be at least 6 characters"
+                }
+                ]
+                },
+                  terms: {
+                    identifier: 'terms',
+                    rules: [
+                    {
+                      type : 'checked',
+                      prompt : "You must agree to the terms and conditions"
+                    }
+                    ]
+             }
+                }
+                }
+              
+            
+          
+        )
+      ;
+    })
+  
+  ;
+  </script>
+
+
+<body onload="messageXD()">
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="#" class="header item">
+        <img class="logo" src="assets/images/logo.png">
+        CPLiteServer
+      </a>
+      <a href="http://localhost/" class="item">Home</a>
+     </div></div>
+
+
+
+	<div class="ui middle aligned center aligned grid">
+		  <div class="column">
+    <h2 class="ui teal image header">
+      <img src="assets/images/logo.png" class="image">
+      <div class="content">
+      	Register an account
+      </div>
+  </h2>
+
+
+  <script>
+    function validate(e) {
+        e = e || window.event;
+        var bad = /[^\sa-z\d]/i,
+            key = String.fromCharCode( e.keyCode || e.which );   
+ 
+        if ( e.which !== 0 && e.charCode !== 0 && bad.test(key) ) {
+            e.returnValue = false;
+            if ( e.preventDefault ) {
+                e.preventDefault();
+            }
+        } 
+     }   
+</script>
+
+
+
+<form id="signup" class="ui large form" name="signup" method="post" action="/signup">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="mail icon"></i>
+            <input class="text" name="email" type="email" maxlength="55" placeholder="E-mail address">
+           </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input name="username" type="text" onkeypress="validate(event)" minlength="3" maxlength="12" placeholder="Username">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input name="password" type="password" minlength="6" maxlength="100" placeholder="Password">
+          </div>
+        </div>
+                    <div class="inline field">
+      <div class="ui checkbox">
+        <input name="terms" onkeypress="validate(event)" type="checkbox">
+        <label>I agree to the terms and conditions</label>
+      </div>
+    </div>
+        <input class="ui fluid large teal submit button" type="submit" value="Register">
+      </div>
+      <div class="ui error message"></div>
+                <div class="ui reset button">Reset</div>
+</form>
+
+
+
+    <div class="ui message">
+      <p><font color="#35BDB2" onclick="alertMessage()">CPLiteServer</font> by Zaseth</p>
+      <div class="ui divided selection list">
+  <a class="item">
+    <div class="ui red horizontal label">Please do not use special characters in your username</div>
+  </a>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function alertMessage() {
+if(!alertify.myAlert){
+  alertify.dialog('myAlert',function(){
+    return{
+      main:function(message){
+        this.message = message;
+      },
+      setup:function(){
+          return { 
+            buttons:[{text: "GOT IT", key:27/*Esc*/}],
+            focus: { element:0 }
+          };
+      },
+      prepare:function(){
+        this.setContent(this.message);
+      }
+  }});
+}
+alertify.myAlert("CPLiteServer is an entire javascript based Apache clone. This server can entirely run a website.");
+}
+</script>
+
+
+
+
+
+
+<script>
+function messageXD() {
+if(!alertify.myAlert){
+  alertify.dialog('myAlert',function(){
+    return{
+      main:function(message){
+        this.message = message;
+      },
+      setup:function(){
+          return { 
+            buttons:[{text: "GOT IT", key:27/*Esc*/}],
+            focus: { element:0 }
+          };
+      },
+      prepare:function(){
+        this.setContent(this.message);
+      }
+  }});
+}
+alertify.myAlert("The registration is still in beta and runs fully on javascript. If you found a bug, please contact me (Zaseth) on Discord. If something is not working, you can contact me as well and I will help you. Now, register your penguin and play!");
+}
+</script>
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <div class="ui stackable inverted divided grid">
+        <div class="seven wide column">
+        </div>
+      </div>
+      <div class="ui inverted section divider"></div>
+      <img src="assets/images/logo.png" class="ui centered mini image">
+      <div class="ui horizontal inverted small divided link list">
+        <a class="item" onclick="footer1()">Contact</a>
+        <a class="item" onclick="footer2()">Terms and Conditions</a>
+        <a class="item" onclick="footer3()">Privacy Policy</a>
+        <a class="item">CPLiteServer by Zaseth</a>
+        <h4 class="ui inverted teal header">Help Preserve This Project</h4>
+        <p> Support for the continued development of Semantic UI comes directly from the community.</p>
+      </div>
+    </div>
+      </div>
+
+
+
+
+
+<script>
+window.less = {
+  async        : true,
+  environment  : 'production',
+  fileAsync    : false,
+  onReady      : false,
+  useFileCache : true
+};
+</script>
+
+<script>
+function footer1(){
+	if(!alertify.myAlert){
+  alertify.dialog('myAlert',function(){
+    return{
+      main:function(message){
+        this.message = message;
+      },
+      setup:function(){
+          return { 
+            buttons:[{text: "GOT IT", key:27/*Esc*/}],
+            focus: { element:0 }
+          };
+      },
+      prepare:function(){
+        this.setContent(this.message);
+      }
+  }});
+}
+alertify.myAlert("You can add me on Discord: Zaseth#7550 (I am the developer of CPLiteServer and this register)");
+}
+</script>
+<script>
+function footer2(){
+	if(!alertify.myAlert){
+  alertify.dialog('myAlert',function(){
+    return{
+      main:function(message){
+        this.message = message;
+      },
+      setup:function(){
+          return { 
+            buttons:[{text: "GOT IT", key:27/*Esc*/}],
+            focus: { element:0 }
+          };
+      },
+      prepare:function(){
+        this.setContent(this.message);
+      }
+  }});
+}
+alertify.myAlert("We take no rights for Club Penguin and you will not be in any illegal situation for playing.");
+}
+</script>
+<script>
+function footer3(){
+	if(!alertify.myAlert){
+  alertify.dialog('myAlert',function(){
+    return{
+      main:function(message){
+        this.message = message;
+      },
+      setup:function(){
+          return { 
+            buttons:[{text: "GOT IT", key:27/*Esc*/}],
+            focus: { element:0 }
+          };
+      },
+      prepare:function(){
+        this.setContent(this.message);
+      }
+  }});
+}
+alertify.myAlert("You should <b>NEVER</b> use your real name or give any other <b>private</b> information. If you do so, we are <b>not</b> responsible for anything.");
+}
+</script>
+
+
+</body>
+</html>
