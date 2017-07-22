@@ -1,0 +1,142 @@
+<script>
+$(document)
+  .ready(function() {
+    $('.ui.form')
+      .form({
+        fields: {
+          email: {
+            identifier  : 'email',
+            rules: [
+              {
+                type   : 'empty',
+                prompt : "Please enter your e-mail"
+              },
+              {
+                type   : 'email',
+                prompt : "Please enter a valid e-mail"
+              }
+            ]
+          },
+          ques: {
+    identifier : 'username',
+    rules: [
+      {
+        type   : 'empty',
+        prompt : "Please enter a question"
+      },
+      {
+        type   : 'minLength[3]',
+        prompt : "Your question must be at least 3 characters"
+      }
+    ]
+              },
+                terms: {
+                  identifier: 'terms',
+                  rules: [
+                  {
+                    type : 'checked',
+                    prompt : "You must agree to the terms and conditions"
+                  }
+                  ]
+           }
+              }
+              }
+
+
+
+      )
+    ;
+  })
+
+;
+</script>
+
+
+
+
+
+
+
+<body>
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="#" class="header item">
+        <img class="logo" src="assets/images/logo.png">
+        CPLiteServer
+      </a>
+      <a href="/" class="item">Home</a>
+     </div></div>  <br />  <br />
+  <br />  <br />  <br />  <br />  <br />  <br />  <br />
+	<div class="ui middle aligned center aligned grid">
+		  <div class="column">
+    <h2 class="ui teal image header">
+      <img src="assets/images/logo.png" class="image">
+      <div class="content">
+      	Contact us/Feedback
+      </div>
+  </h2>
+<form class="ui large form" role="form" action="/process?form=contactus" method="POST">
+  <input type="hidden" name="_csrf" value="{{csrf}}">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="mail icon"></i>
+            <input type="text" class="form-control" id="fieldEmail" placeholder="Email" name="email">
+           </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" class="form-control" id="fieldQues" onkeypress="validate(event)" placeholder="Question/Feedback" name="ques">
+          </div>
+        </div>
+<p><font color="#35BDB2">Experience:</font></p>
+        <div class="radio">
+          <label><input type="radio" value="1" name="optradio">✔️ - Excellent!</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" value="2" name="optradio">❓ - Not good nor bad</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" value="3" name="optradio">❌ - Bad</label>
+        </div>
+        <div class="inline field">
+<div class="ui checkbox">
+<input name="terms" onkeypress="validate(event)" type="checkbox">
+<label>I agree to the terms and conditions</label>
+</div>
+</div>
+        <button type="submit" class="ui fluid large teal submit button">Submit</button>
+      </div>
+</form>
+
+<div class="ui message">
+  <p><font color="#35BDB2" onclick="alertMessage()">CPLiteServer</font> by Zaseth</p>
+  <div class="ui divided selection list">
+<a class="item">
+<div class="ui red horizontal label">Please keep it serious!</div>
+</a>
+</div>
+</div>
+  </div>
+</div>
+
+
+
+<script>
+  function validate(e) {
+      e = e || window.event;
+      var bad = /[^\sa-z\d]/i,
+          key = String.fromCharCode( e.keyCode || e.which );
+
+      if ( e.which !== 0 && e.charCode !== 0 && bad.test(key) ) {
+          e.returnValue = false;
+          if ( e.preventDefault ) {
+              e.preventDefault();
+          }
+      }
+   }
+</script>
+
+</body>
+</html>
