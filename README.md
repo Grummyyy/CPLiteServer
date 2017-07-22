@@ -1,4 +1,4 @@
-A project by: Toxic is Gay LLC
+A project by: Toxic is a sexy muscular latino LLC
 
 # Download CPLiteServer with a functional mediaserver:
 
