@@ -13,6 +13,9 @@ https://drive.google.com/open?id=0B-qkAh8VoXBINlVXdDlmMUdqVUk
 
 # CPLiteServer documentation
 
+**NOTE: PLEASE UNZIP THE FILE *public.rar* SO THAT THERE'S A FOLDER NAMED *public* AND IT SHOULD LOOK LIKE:  **
+
+![alt text](https://i.gyazo.com/49f666d76ab8b84cb7aa5983e6cd9cdc.png "CPLiteServer")
 
 Content:
 * Introduction
