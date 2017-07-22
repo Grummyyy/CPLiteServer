@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html ng-app="app"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Angular JSON Human Demo Page</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link href="pure.css" rel="stylesheet" />
+  <style>
+    .l-box {
+      padding: 1em;
+    }
+
+    .prettify-button {
+      margin: 0.5em 0;
+    }
+
+    .json-editor {
+      width: 100%;
+    }
+  </style>
+  <link href="angular-json-human.css" rel="stylesheet" />
+</head>
+<body ng-controller="MainCtrl">
+  <div class="pure-g-r">
+    <div class="pure-u-1-2">
+      <div class="l-box">
+        <div class="pure-button pure-button-primary prettify-button" ng-click="prettify()">Prettify JSON</div>
+        <textarea class="json-editor" ng-model="jsonStr" rows="15"></textarea>
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div class="l-box">
+        <h2>Using JSON String</h2>
+        <code>&lt;div json-human="jsonStr"&gt;&lt;/div&gt;</code>
+        <div json-human="jsonStr"></div>
+      </div>
+    </div>
+
+    <div class="pure-u-1">
+      <hr>
+    </div>
+
+    <div class="pure-u-1-2">
+      {{ jsonObj }}
+    </div>
+    <div class="pure-u-1-2">
+      <div class="l-box">
+        <h2>Using Javascript Object</h2>
+        <code>&lt;div json-human="jsonObj"&gt;&lt;/div&gt;</code>
+        <div json-human="jsonObj"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="lodash.js"></script>
+  <script src="angular.js"></script>
+  <script src="angular-json-human.js"></script>
+  <script>
+    var app = angular.module('app', [
+      'yaru22.jsonHuman'
+    ]);
+    app.controller('MainCtrl', function ($scope) {
+      $scope.jsonObj = {
+        "author": {
+          "name": "Brian Park",
+          "email": "yaru22@gmail.com"
+        },
+
+        "name": "angular-json-human",
+        "description": "Angular directive to convert JSON into human readable table. Inspired by https://github.com/marianoguerra/json.human.js.",
+        "version": "1.1.0",
+        "license": "MIT",
+        "homepage": "https://github.com/yaru22/angular-json-human",
+        "repository": {
+          "type": "git",
+          "url": "git://github.com/yaru22/angular-json-human.git"
+        },
+        "ignore": [
+          ".editorconfig",
+          ".gitattributes",
+          ".gitignore",
+          ".gittrack",
+          ".jshintrc",
+          "demo/",
+          "Gruntfile.js",
+          "karma-unit.conf.js",
+          "package.json",
+          "src/",
+          "template/",
+          "test/"
+        ],
+
+        "dependencies": {
+          "angular": "1.2.10",
+          "angular-mocks": "1.2.10",
+          "lodash": "2.4.1"
+        },
+        "devDependencies": {
+          "chai": "1.9.0",
+          "jquery": "2.1.0"
+        }
+      };
+      $scope.jsonStr = JSON.stringify($scope.jsonObj, undefined, 2);
+
+      $scope.prettify = function () {
+        try {
+          $scope.jsonStr = JSON.stringify(JSON.parse($scope.jsonStr), undefined, 2);
+        } catch (e) {
+          alert(e);
+        }
+      };
+    });
+  </script>
+</body>
+</html>
