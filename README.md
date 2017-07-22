@@ -11,6 +11,10 @@ https://drive.google.com/open?id=0B-qkAh8VoXBINlVXdDlmMUdqVUk
 ![alt text](http://i.imgur.com/UwSTleT.png "CPLiteServer")
 
 
+![alt text](http://i.imgur.com/EJEqZVw.png "CPLiteServer")
+
+Second logo by: M!SH
+
 # CPLiteServer documentation
 
 **NOTE: PLEASE UNZIP THE FILE *public.rar* SO THAT THERE'S A FOLDER NAMED *public* AND IT SHOULD LOOK LIKE:  **
