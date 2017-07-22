@@ -1,7 +1,16 @@
+A project by: Toxic is Gay LLC
+
 ![alt text](http://i.imgur.com/UwSTleT.png "CPLiteServer")
 
 
 # CPLiteServer documentation
+
+# Download CPLiteServer with a functional mediaserver:
+
+https://drive.google.com/open?id=0B-qkAh8VoXBINlVXdDlmMUdqVUk
+
+(P.S, I am not a wizard. So you can manually edit this mediaserver. Please use the Load.swf that is in /public/play/
+
 
 Content:
 * Introduction
@@ -10,7 +19,6 @@ Content:
 * Configuration
 * Extra
 * Outro and contact
-
 
 
 ##
@@ -259,6 +267,7 @@ In this folder there will be every resource that the *users* can access. **SO DO
 ##
 
 ### Outro and contact
+For any issues, you can contact me on:
 
 Discord: Zaseth#7550
 
