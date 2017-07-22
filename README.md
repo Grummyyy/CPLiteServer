@@ -15,6 +15,16 @@ https://drive.google.com/open?id=0B-qkAh8VoXBINlVXdDlmMUdqVUk
 
 Second logo by: M!SH
 
+
+![alt text](http://i.imgur.com/ykvXA73.png "CPLiteServer")
+
+
+![alt text](https://i.gyazo.com/9716d330c1083794d1b6f600b2533d15.png "CPLiteServer")
+
+![alt text](https://i.gyazo.com/73c5a3afc50c887095db5c95411a3008.png "CPLiteServer")
+
+![alt text](https://i.gyazo.com/72b59ad1b0e25617b362b8ae2c09bb18.png "CPLiteServer")
+
 # CPLiteServer documentation
 
 
