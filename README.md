@@ -5,9 +5,8 @@ A project by: Toxic is a sexy muscular latino LLC
 ##
 
 Changelog:
-
+* 23-7-2017: (Serverjs): Contactdata is stored in a better way.
 * Updated readme
-
 ##
 
 # Download CPLiteServer with a functional mediaserver:
