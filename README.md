@@ -2,6 +2,14 @@ A project by: Toxic is a sexy muscular latino LLC
 
 (i love this guy though, and hes not a latino. this nig is as white as Casper the ghost.)
 
+##
+
+Changelog:
+
+* Updated readme
+
+##
+
 # Download CPLiteServer with a functional mediaserver:
 
 https://drive.google.com/open?id=0B-qkAh8VoXBINlVXdDlmMUdqVUk
@@ -33,6 +41,7 @@ Content:
 * Required programs
 * Setup
 * Configuration
+* Starting the servers
 * Extra
 * Outro and contact
 
@@ -169,7 +178,10 @@ In the javascript file *mysql_conf*, you should edit the following lines to your
 
 ![alt text](https://i.gyazo.com/33274ca0035ca98aec2d253203f77598.png "CPLiteServer")
 
-The register is running on a different server. You can access the register on: *localhost:5000/signup*. First, I will explain you what the javascript file: *server* does:
+The register is running on a different server. You can access the register on: *localhost:5000/signup*. You need to import the included *kitsune* database.
+
+
+Now, I will explain you what the javascript file: *server* does:
 
 
 ![alt text](https://i.gyazo.com/e5a5ab52a2ad7614c3ac99fe0a83c4d8.png "CPLiteServer")
@@ -284,6 +296,12 @@ In this folder there will be every resource that the *users* can access. **SO DO
 **NOTE: NODEJS CAN ONLY RUN JAVASCRIPT. SO NOT PHP. THE MEDIASERVER THAT IS INCLUDED (WHICH YOU CAN DOWNLOAD ON A DIFFERENT LINK IN THIS DOC) CONTAINS PHP FILES, BUT ARE UNACCESSABLE BY A METHOD THAT CPLITESERVER USES.**
 
 ##
+
+### Starting the servers
+
+To start CPLiteServer, cd to the folder and enter the command in CMD: *node server.js* and it should start.
+
+To start the register, cd to the register folder and enter the command in CMD: *node server.js*.
 
 ### Outro and contact
 For any issues, you can contact me on:
