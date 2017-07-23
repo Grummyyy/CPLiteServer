@@ -90,7 +90,7 @@ console.log('Preinstalled with the ICE CPPS Theme made by: AmusingThrone');
 console.log('I do not own anything from the theme');
 console.log('Creating your own SWFs is now supported, but commented out');
 if(S(WWW).latinise().s) {
-		console.log('[*] WWW checked');
+    console.log('[*] WWW checked');
 };
 }
 sayIntro();
@@ -135,7 +135,7 @@ app.use(bodyParser.json());
 run();
 function run() {
   var pcapWriter = new PcapWriter('./logs/test.pcap', 1500, 105);
-	PcapWriter.prototype.writePacket = function(pkt, ts) {
+  PcapWriter.prototype.writePacket = function(pkt, ts) {
     pcapWriter.close();
 }
 }
@@ -486,11 +486,14 @@ app.get('/contact', function(req, res){
   res.render('contact.handlebars', { csrf: 'OFDHFD0DHF9ifdjihdif'});
 });
 
+var breakLine = "\r\n";
+var seperateLine = "++++++++++++++";
+
 app.post('/process', function(req, res, next){
   console.log('Someone just gave feedback!');
   res.redirect(303, '/thankyou');
     fs.appendFile('./contactdata/contactdata.txt',
-    req.query.form + ' ' + 'CSRF: ' + req.body._csrf + ' ' + 'Email: ' + req.body.email + ' ' + 'Question: ' + req.body.ques + ' ' + 'Experience: ' + req.body.optradio + '|', function(err){
+      seperateLine + breakLine + req.query.form + breakLine + 'CSRF: ' + req.body._csrf + breakLine + 'Email: ' + req.body.email + breakLine + 'Question: ' + req.body.ques + breakLine + 'Experience: ' + req.body.optradio + breakLine + seperateLine, function(err){
       if(err){
         return console.error(err);
       };
