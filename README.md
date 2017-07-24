@@ -5,13 +5,17 @@ A project by: Toxic is a sexy muscular latino LLC
 ##
 
 Changelog:
+* 24-7-2017: You can run PHPMYADMIN if you set Apache's port to something else then 80 or 3001. Set Apache's SSL also on to a different port like 7443 and Apache itself like 780
+* 24-7-2017: (Serverjs, contact.handlebars & views): updated css paths so that /contact/ wont give broken css + contactdata comes with date&time and csrf is now a const. VueJS (Javascript Framework that I added in the /public/ html pages) will now also auto grab the latest version. (VueJS is used here for faster loading)
 * 23-7-2017: (Serverjs): Contactdata is stored in a better way.
-* Updated readme
+* Readme will be updated daily for fixes.
 ##
 
 # Download CPLiteServer with a functional mediaserver:
 
 https://drive.google.com/open?id=0B-qkAh8VoXBINlVXdDlmMUdqVUk
+
+**NOTE: THE MEDIASERVER VERSION WILL NOT INCLUDE UPDATES. JUST COPY OVER THE GAME FILES INTO THE RECENT VERSION FROM GITHUB.**
 
 (P.S, I am not a wizard. So you can manually edit this mediaserver. Please use the Load.swf that is in /public/play/
 
