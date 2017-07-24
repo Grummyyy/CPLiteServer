@@ -30,7 +30,7 @@ module.exports = function(passport) {
 
     passport.deserializeUser(function(id, done) {
         connection.query("select * from penguins where id = "+id,function(err,rows){ + connection.escape(id);
-        	id.toString();
+            id.toString();
             done(err, rows);
         });
     });
@@ -62,22 +62,13 @@ module.exports = function(passport) {
         done(null, username);
     });
 
-
-
-
-
-
-if (req.body.username.indexOf('?', '<', '>', '@', 'á', 'ç', 'é', 'í', 'ó', 'Á', 'Ç', 'É', 'Í', 'Ó', '!', ':', ';', '%', '(', ')') > -1) {
-    	return done(null, false, req.flash('signupMessage', 'Your username contained a blacklisted character.'));
-} else {
-
         connection.query("select * from penguins where username = '"+username+"'",function(err,rows){ + connection.escape(username);
           username.toString();
-			console.log(rows);
-			console.log("above row object");
-			if (err)
+            console.log(rows);
+            console.log("above row object");
+            if (err)
                 return done(err);
-			 if (rows.length) {
+             if (rows.length) {
                 return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
             } else {
 
@@ -98,7 +89,6 @@ if (req.body.username.indexOf('?', '<', '>', '@', 'á', 'ç', 'é', 'í', 'ó', 
                     });
             };
         });
-      }
     }));
 
     // =========================================================================
@@ -112,7 +102,7 @@ if (req.body.username.indexOf('?', '<', '>', '@', 'á', 'ç', 'é', 'í', 'ó', 
 
     function(req, email, password, username, nickname, done) {
         connection.query("select * from penguins where username = '"+username+"'",function(err,rows){ + connection.escape(username);
-        	username.toString();
+            username.toString();
             if (err) return done(err);
             if (!rows.length) {
                 return done(null, false, req.flash('loginMessage', 'No user found.'));
