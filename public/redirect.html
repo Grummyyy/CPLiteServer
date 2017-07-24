@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<title>Redirecting...</title>
+<meta name="generator" content="Redirect" >
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="description" content="CPLiteServer - The Node.js Webserver designed for a CPPS.">
+<meta name="author" content="Zaseth" >
+<meta name="keywords" content="CPPS,CP,club penguin,penguin,club,clubpenguin,penguinclub,penguin club">
+</head><body onload="DelayRedirect()"><center><h1>
+The machine wants you to turn around!
+</h1><div id="dvCountDown" style = "display:none">
+You will be redirected after <span id = "lblCount"></span>&nbsp;seconds.
+</div>
+</center><script type="text/javascript">
+function DelayRedirect() {
+    var seconds = 5;
+    var dvCountDown = document.getElementById("dvCountDown");
+    var lblCount = document.getElementById("lblCount");
+    dvCountDown.style.display = "block";
+    lblCount.innerHTML = seconds;
+    setInterval(function () {
+        seconds--;
+        lblCount.innerHTML = seconds;
+        if (seconds == 0) {
+            dvCountDown.style.display = "none";
+            window.location = "http://localhost/";
+        }
+    }, 1000);
+}
+</script>
+<br><br>
+<center>
+	<img src="http://i.imgur.com/G55aolr.png" alt="CPLiteServer-logo" style="width:900px;height:600px;">
+</center>
+</body></html>
