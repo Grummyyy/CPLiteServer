@@ -5,6 +5,7 @@ A project by: Toxic is a sexy muscular latino LLC
 ##
 
 Changelog:
+* 24-7-2017: (Serverjs, contact.handlebars & views): updated css paths so that /contact/ wont give broken css + contactdata comes with date&time and csrf is now a const.
 * 23-7-2017: (Serverjs): Contactdata is stored in a better way.
 * Updated readme
 ##
