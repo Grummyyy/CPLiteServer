@@ -1,6 +1,4 @@
-A project by: Toxic is a sexy muscular latino LLC
-
-(i love this guy though, and hes not a latino. this nig is as white as Casper the ghost.)
+Credits of Kitsune go to the original maker. I only edited it on parts to make it functional with CPLiteServer.
 
 ##
 
