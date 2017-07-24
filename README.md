@@ -1,10 +1,9 @@
-A project by: Toxic is a sexy muscular latino LLC
-
-(i love this guy though, and hes not a latino. this nig is as white as Casper the ghost.)
+Credits of Kitsune go to the original maker. I only edited it on parts to make it functional with CPLiteServer.
 
 ##
 
 Changelog:
+* 24-7-2017: Redirect.html added for use (in /public/ folder)
 * 24-7-2017: You can run PHPMYADMIN if you set Apache's port to something else then 80 or 3001. Set Apache's SSL also on to a different port like 7443 and Apache itself like 780
 * 24-7-2017: (Serverjs, contact.handlebars & views): updated css paths so that /contact/ wont give broken css + contactdata comes with date&time and csrf is now a const. VueJS (Javascript Framework that I added in the /public/ html pages) will now also auto grab the latest version. (VueJS is used here for faster loading)
 * 23-7-2017: (Serverjs): Contactdata is stored in a better way.
