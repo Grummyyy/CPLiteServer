@@ -127,13 +127,13 @@
              }
                 }
                 }
-              
-            
-          
+
+
+
         )
       ;
     })
-  
+
   ;
   </script>
 
@@ -159,47 +159,29 @@
       </div>
   </h2>
 
-
-  <script>
-    function validate(e) {
-        e = e || window.event;
-        var bad = /[^\sa-z\d]/i,
-            key = String.fromCharCode( e.keyCode || e.which );   
- 
-        if ( e.which !== 0 && e.charCode !== 0 && bad.test(key) ) {
-            e.returnValue = false;
-            if ( e.preventDefault ) {
-                e.preventDefault();
-            }
-        } 
-     }   
-</script>
-
-
-
 <form id="signup" class="ui large form" name="signup" method="post" action="/signup">
       <div class="ui stacked segment">
         <div class="field">
           <div class="ui left icon input">
             <i class="mail icon"></i>
-            <input class="text" name="email" type="email" maxlength="55" placeholder="E-mail address">
+            <input class="text" name="email" type="email" pattern="[^'\x22]+" maxlength="55" placeholder="E-mail address">
            </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input name="username" type="text" onkeypress="validate(event)" minlength="3" maxlength="12" placeholder="Username">
+            <input name="username" type="text" pattern="[^'\x22]+" minlength="3" maxlength="12" placeholder="Username">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input name="password" type="password" minlength="6" maxlength="100" placeholder="Password">
+            <input name="password" type="password" pattern="[^'\x22]+" minlength="6" maxlength="100" placeholder="Password">
           </div>
         </div>
                     <div class="inline field">
       <div class="ui checkbox">
-        <input name="terms" onkeypress="validate(event)" type="checkbox">
+        <input name="terms" type="checkbox">
         <label>I agree to the terms and conditions</label>
       </div>
     </div>
@@ -215,7 +197,7 @@
       <p><font color="#35BDB2" onclick="alertMessage()">CPLiteServer</font> by Zaseth</p>
       <div class="ui divided selection list">
   <a class="item">
-    <div class="ui red horizontal label">Please do not use special characters in your username</div>
+    <div class="ui red horizontal label">None of the inputs can contain: '</b> or <b>"</b></div>
   </a>
   </div>
 
@@ -232,7 +214,7 @@ if(!alertify.myAlert){
         this.message = message;
       },
       setup:function(){
-          return { 
+          return {
             buttons:[{text: "GOT IT", key:27/*Esc*/}],
             focus: { element:0 }
           };
@@ -260,7 +242,7 @@ if(!alertify.myAlert){
         this.message = message;
       },
       setup:function(){
-          return { 
+          return {
             buttons:[{text: "GOT IT", key:27/*Esc*/}],
             focus: { element:0 }
           };
@@ -316,7 +298,7 @@ function footer1(){
         this.message = message;
       },
       setup:function(){
-          return { 
+          return {
             buttons:[{text: "GOT IT", key:27/*Esc*/}],
             focus: { element:0 }
           };
@@ -338,7 +320,7 @@ function footer2(){
         this.message = message;
       },
       setup:function(){
-          return { 
+          return {
             buttons:[{text: "GOT IT", key:27/*Esc*/}],
             focus: { element:0 }
           };
@@ -360,7 +342,7 @@ function footer3(){
         this.message = message;
       },
       setup:function(){
-          return { 
+          return {
             buttons:[{text: "GOT IT", key:27/*Esc*/}],
             focus: { element:0 }
           };

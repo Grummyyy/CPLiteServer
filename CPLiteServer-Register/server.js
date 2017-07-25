@@ -8,12 +8,22 @@
     var flash = require('connect-flash');
     morgan = require('morgan');
     var fs = require('fs');
-
+    var xssFilter = require('x-xss-protection')
+    var Ddos = require('ddos');
     console.log('CPLiteServer register by Zaseth');
 
 
 var accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'}) // Stores FULL styled Apache logs here
 app.use(morgan('combined',  {"stream": accessLogStream}));
+
+// DDOS settings
+var limit = 400;
+var checkinterval = 1;
+var burst = 10;
+var maxexpiry = 120;
+var ddos = new Ddos({burst,limit,silentStart:true,checkinterval,maxexpiry,testmode:true,responseStatus:429,errormessage:'Look buddy, Zaseth added a package to block large amounts of traffic. Just refresh the page if you did not intend to DDOS the server.',includeUserAgent:false,trustProxy:false,whitelist:['localhost', '127.0.0.1']});
+// End of DDOS settings
+
 
 app.use(morgan('dev', { // dev is a mode for logging and is displayed on the terminal
     function (req, res) {
@@ -34,7 +44,7 @@ app.use(morgan('dev', {
     app.use(bodyParser.urlencoded({
         extended: true
     }));
-    app.use(bodyParser.json());
+    app.use(bodyParser.raw());
     app.use(flash());
 
     // For Passport
@@ -47,6 +57,9 @@ app.use(morgan('dev', {
     app.use(passport.session()); // persistent login sessions
 
 app.use(express.static('public'))
+
+//XSS Protection Header
+app.use(xssFilter())
 
 //Disable Express Header
 app.disable('x-powered-by');
