@@ -3,6 +3,7 @@ Credits of Kitsune go to the original maker. I only edited it on parts to make i
 ##
 
 Changelog:
+* 25-7-2017: (VERY IMPORTANT - REGISTER): KNOWN ISSUES FULLY FIXED. ANTI-VULNERABILITY SCANNER ADDED TO REGISTER.
 * 24-7-2017: (IMPORTANT - REGISTER): SECURITY UPDATE ADDED.
 * 24-7-2017: Redirect.html added for use (in /public/ folder)
 * 24-7-2017: You can run PHPMYADMIN if you set Apache's port to something else then 80 or 3001. Set Apache's SSL also on to a different port like 7443 and Apache itself like 780
