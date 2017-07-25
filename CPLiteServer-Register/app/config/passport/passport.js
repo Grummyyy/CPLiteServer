@@ -82,7 +82,7 @@ connection.query(sql69, function (err, rows) { // Update
                         username: username,
                         nickname: nickname
                     };
-                var insertQuery = "INSERT INTO penguins (`igloos`, `igloo`, `moderator`, `inventory`, `email`, `password`, `username`, `nickname` ) VALUES ('1','1','" + [moderator] + "', '" + [inventory] + "', '" + [email] +  "', UPPER(MD5(" + mysql.escape(password) + ")), " + mysql.escape(username) + ", " + mysql.escape(username) + ");"; // Update
+                var insertQuery = "INSERT INTO penguins (`igloos`, `igloo`, `moderator`, `inventory`, `email`, `password`, `username`, `nickname` ) VALUES ('1','1','" + [moderator] + "', '" + [inventory] + "', " + mysql.escape(email) +  ", UPPER(MD5(" + mysql.escape(password) + ")), " + mysql.escape(username) + ", " + mysql.escape(username) + ");"; // Update
                 console.log(insertQuery);
                     connection.query(insertQuery, [newUserMysql.igloos, newUserMysql.igloo, newUserMysql.moderator, newUserMysql.inventory, newUserMysql.email, newUserMysql.password, newUserMysql.username, newUserMysql.nickname],function(err, rows) { // Update
                     newUserMysql.id = rows.insertId;
@@ -105,7 +105,7 @@ connection.query(sql69, function (err, rows) { // Update
     },
 
     function(req, email, password, username, nickname, done) {
-        connection.query("select * from penguins where username = '"+username+"'",function(err,rows){ + connection.escape(username);
+        connection.query("SELECT * FROM penguins WHERE username = '"+username+"'",function(err,rows){ + connection.escape(username);
             username.toString();
             if (err) return done(err);
             if (!rows.length) {

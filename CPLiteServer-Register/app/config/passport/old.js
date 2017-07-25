@@ -8,6 +8,8 @@ var connection = mysql.createConnection({
     password: 'root'
 });
 
+connection.query('USE kitsune');
+
 connection.config.queryFormat = function (query, values) {
   if (!values) return query;
   return query.replace(/\:%'"=-?(\w+)/g, function (txt, key) {
@@ -18,8 +20,6 @@ connection.config.queryFormat = function (query, values) {
   }.bind(this));
 };
 
-connection.query('USE kitsune');
-
 module.exports = function(passport) {
     // =========================================================================
     // passport session setup ==================================================
@@ -28,33 +28,30 @@ module.exports = function(passport) {
         done(null, user.id);
     });
 
-    passport.deserializeUser(function(id, done) {
-        connection.query("SELECT * FROM penguins WHERE id = ? ",[id], function(err, rows){
-            done(err, rows[0]);
+    passport.deserializeUser(function(id, done) { // Update
+var sql68 = "SELECT * FROM penguins WHERE id=" + mysql.escape(id); // Update
+connection.query(sql68, function(err,rows){ // Update
+            done(err, rows);
         });
     });
 
     // =========================================================================
     // LOCAL SIGNUP ============================================================
     // =========================================================================
-
-    passport.use(
-        'local-signup',
-        new LocalStrategy({
-            usernameField : 'username',
-            passwordField : 'password',
-            gameusernameField: 'username',
-            nicknameField: 'nickname',
-            passReqToCallback : true
-        },
+       passport.use('local-signup', new LocalStrategy({
+        usernameField: 'username',
+        passwordField: 'password',
+        nicknameField: 'nickname',
+        passReqToCallback: true
+    },
 
     function(req, username, password, done) {
         const email = req.body.email;
         const nickname = req.body.nickname;
         const inventory = '%1'; // This is what the user gets on register. You can set this to anything that you want like: %1%2%3%4%5%6%7%8%9%10%11%12%13%14%15%16
-        const moderator = '0';
-        const igloo = '1';
-        const igloos = '1';
+        const moderator = '0'; // Auto set to 0 (False)
+        const igloo = '1'; // Gives main igloo
+        const igloos = '1'; // Puts main igloo in backpack
         console.log("Inventory is set to: " + inventory);
         console.log("Moderator is set to: " + moderator);
         console.log("Igloo is set to: " + igloo);
@@ -63,37 +60,40 @@ module.exports = function(passport) {
     passport.serializeUser(function(username, done) {
         done(null, username);
     });
-    passport.serializeUser(function(username, done) {
-        connection.query("SELECT * FROM penguins WHERE username = ",[username], function(err, rows){
+
+
+var sql69 = "SELECT * FROM penguins WHERE username=" + mysql.escape(username); // Update
+connection.query(sql69, function (err, rows) { // Update
             console.log(rows);
+            console.log(sql69); // Update
             console.log("above row object");
-            if (err)
-                return done(err);
+            if (err) return done(err); // Update
              if (rows.length) {
                 return done(null, false, req.flash('signupMessage', 'Invalid login.'));
             } else {
 
-
-                    var newUserMysql = {
+                    var newUserMysql = { // Update
                         igloos: igloos,
                         igloo: igloo,
                         moderator: moderator,
                         inventory: inventory,
                         email: email,
-                        password: (password, null, null),
+                        password: password,
                         username: username,
                         nickname: nickname
                     };
-                var insertQuery = "INSERT INTO penguins (`igloos`, `igloo`, `moderator`, `inventory`, `email`, `password`, `username`, `nickname` ) VALUES ('1','1','" + [moderator] + "', '" + [inventory] + "', '" + [email] +  "', + UPPER(MD5('" + [password] + "')), '" + [username] + "', '" + [username] + "');"; + connection.escape(username); + connection.escape(email);
+                var insertQuery = "INSERT INTO penguins (`igloos`, `igloo`, `moderator`, `inventory`, `email`, `password`, `username`, `nickname` ) VALUES ('1','1','" + [moderator] + "', '" + [inventory] + "', '" + [email] +  "', UPPER(MD5(" + mysql.escape(password) + ")), " + mysql.escape(username) + ", " + mysql.escape(username) + ");"; // Update
                 console.log(insertQuery);
-                connection.query(insertQuery,[newUserMysql.igloos, newUserMysql.igloo, newUserMysql.moderator, newUserMysql.inventory, newUserMysql.email, newUserMysql.password, newUserMysql.username, newUserMysql.nickname],function(err, rows) {
+                    connection.query(insertQuery, [newUserMysql.igloos, newUserMysql.igloo, newUserMysql.moderator, newUserMysql.inventory, newUserMysql.email, newUserMysql.password, newUserMysql.username, newUserMysql.nickname],function(err, rows) { // Update
                     newUserMysql.id = rows.insertId;
                     return done(null, newUserMysql);
                     });
             };
         });
-    });
     }));
+
+// Login is not used, so please also do not use it as I am too lazy to escape the query xd
+
 
     // =========================================================================
     // LOCAL LOGIN =============================================================
@@ -104,10 +104,10 @@ module.exports = function(passport) {
         passReqToCallback: true
     },
 
-    function(req, username, password, done) { // callback with email and password from our form
-        connection.query("SELECT * FROM penguins WHERE username = ?",[username], function(err, rows){
-            if (err)
-                return done(err);
+    function(req, email, password, username, nickname, done) {
+        connection.query("select * from penguins where username = '"+username+"'",function(err,rows){ + connection.escape(username);
+            username.toString();
+            if (err) return done(err);
             if (!rows.length) {
                 return done(null, false, req.flash('loginMessage', 'No user found.'));
             }
