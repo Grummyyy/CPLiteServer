@@ -3,6 +3,7 @@ Credits of Kitsune go to the original maker. I only edited it on parts to make i
 ##
 
 Changelog:
+* 25-7-2017: (REGISTER - PATCH): UPDATED CSS AND REMOVED BRACKETS IN insertQuery.
 * 25-7-2017: (Serverjs) Fixed typo.
 * 25-7-2017: (VERY IMPORTANT - REGISTER): KNOWN ISSUES FULLY FIXED. ANTI-VULNERABILITY SCANNER ADDED TO REGISTER.
 * 24-7-2017: (IMPORTANT - REGISTER): SECURITY UPDATE ADDED.
