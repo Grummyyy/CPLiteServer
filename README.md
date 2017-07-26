@@ -14,11 +14,17 @@ Changelog:
 * Readme will be updated daily for fixes.
 ##
 
+
+# Download CPLiteServer /public/play/ folder (includes game files)
+
+https://drive.google.com/open?id=0B-qkAh8VoXBIcVRCZ2ZDekp6Wjg
+
+Just replace the play folder in /public/play/
+
 # Download CPLiteServer with a functional mediaserver:
 
-https://drive.google.com/open?id=0B-qkAh8VoXBINlVXdDlmMUdqVUk
+**OUTDATED** https://drive.google.com/open?id=0B-qkAh8VoXBINlVXdDlmMUdqVUk
 
-**NOTE: THE MEDIASERVER VERSION WILL NOT INCLUDE UPDATES. JUST COPY OVER THE GAME FILES INTO THE RECENT VERSION FROM GITHUB.**
 
 (P.S, I am not a wizard. So you can manually edit this mediaserver. Please use the Load.swf that is in /public/play/
 
