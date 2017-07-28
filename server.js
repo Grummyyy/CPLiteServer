@@ -31,7 +31,7 @@ const PORT = 80;
 const WWW = 'localhost';
 var robots = require('robots.txt');
 
-//var db = require('./mysql_conf'); // MySQL configuration
+var db = require('./mysql_conf'); // MySQL configuration
 
 // DDOS settings
 var limit = 1000;
