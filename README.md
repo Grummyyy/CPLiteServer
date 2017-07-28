@@ -8,7 +8,7 @@ Changelog:
 * 25-7-2017: (VERY IMPORTANT - REGISTER): KNOWN ISSUES FULLY FIXED. ANTI-VULNERABILITY SCANNER ADDED TO REGISTER.
 * 24-7-2017: (IMPORTANT - REGISTER): SECURITY UPDATE ADDED.
 * 24-7-2017: Redirect.html added for use (in /public/ folder)
-* 24-7-2017: You can run PHPMYADMIN if you set Apache's port to something else then 80 or 3001. Set Apache's SSL also on to a different port like 7443 and Apache itself like 780
+* 24-7-2017: You can run PHPMYADMIN if you set Apache's port to something else than 80 or 3001. Set Apache's SSL also on to a different port like 7443 and Apache itself like 780
 * 24-7-2017: (Serverjs, contact.handlebars & views): updated css paths so that /contact/ wont give broken css + contactdata comes with date&time and csrf is now a const. VueJS (Javascript Framework that I added in the /public/ html pages) will now also auto grab the latest version. (VueJS is used here for faster loading)
 * 23-7-2017: (Serverjs): Contactdata is stored in a better way.
 * Readme will be updated daily for fixes.
